@@ -32,13 +32,19 @@ class EventsManager {
     }
 
     poblarCalendario(eventos) {
+    var fecha_actual = new Date();
+    var year = fecha_actual.getFullYear();
+    var month = fecha_actual.getMonth(); 
+    var day = fecha_actual.getDate();  
+
         $('.calendario').fullCalendar({
             header: {
         		left: 'prev,next today',
         		center: 'title',
         		right: 'month,agendaWeek,basicDay'
         	},
-        	defaultDate: '2016-11-01',
+          defaultDate: "'"+year+'-'+month+'-'+day+"'",
+        	//defaultDate: '2017-9-1',
         	navLinks: true,
         	editable: true,
         	eventLimit: true,
